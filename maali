@@ -1674,7 +1674,7 @@ function maali_modify_modulepath {
      if [[ "$MAALI_SYSTEM_BUILD" == "YES" ]] || [[ "$MAALI_WS_BUILD" == "YES" ]]; then
 	 MOD_TOOL_LIST="devel libs apps bio-apps tools" 
 	 for MOD_DIR in ${MOD_TOOL_LIST}; do
-             NEWPATH=$NEWPATH:$MAALI_MODULE_DIR/${MOD_DIR}
+             NEWPATH=$MAALI_MODULE_DIR/${MOD_DIR}:$NEWPATH
 	 done
      else # user or project builds
 	 MOD_TOOL_LIST="apps"
