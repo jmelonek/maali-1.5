@@ -10,8 +10,6 @@ MAALI_CMD_LINE="$0 $*"
 # Rudimentary Operating System detecting which can be overridden by setting
 # MAALI_OS to a value of your choosing
 
-module list
-
 # by default we are not a cray or IBM power
 MAALI_CRAY=0
 MAALI_POWER=0
