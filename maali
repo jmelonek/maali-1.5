@@ -169,7 +169,7 @@ function maali_download {
     MAALI_TMP_DST=${MAALI_DST_ARRAY[$i]}
 
     if [ $DEBUG ]; then
-      echo " .. need to download $MAALI_TMP_URL to $MAALI_TMP_DST"
+      echo " .. attempt to download $MAALI_TMP_URL to $MAALI_TMP_DST"
     fi
 
     if [ ! -f "$MAALI_TMP_DST" ]; then
@@ -179,6 +179,9 @@ function maali_download {
       cd $MAALI_SRC
 
       $MAALI_WGET_CMD $MAALI_WGET_EXTRA -O $MAALI_TMP_DST $MAALI_TMP_URL
+      if [ $DEBUG ] && [ $? == 0 ]; then
+	  echo " .. download from $MAALI_TMP_URL succeeded!"
+      fi
     fi
   done
 } # end function maali_download
@@ -2051,7 +2054,7 @@ test_maali_install_maali
 
 if [ ! -z "${MYGROUP}" ]; then 
     echo " "
-    echo " !!!mygroup dir $MYGROUP defined"
+    echo " !!!mygroup dir is defined as $MYGROUP"
     echo " " 
 else
     echo " !!! "
@@ -2064,8 +2067,6 @@ echo " "
 ######################################################################
 echo "The default module path is defined as $MODULEPATH"
 
-
-
 # user and group builds derive the following through MAALI_ROOT
 MAALI_BUILD_DIR="$MAALI_ROOT/build"
 MAALI_MODULE_DIR="$MAALI_ROOT/modulefiles"
@@ -2076,7 +2077,6 @@ echo "Module dir is $MAALI_MODULE_DIR"
 echo "Source repo ${MAALI_SRC}"
 echo " "
 echo " "
-
 
 if [ -z $TMPDIR ]; then
   TMPDIR=/tmp
