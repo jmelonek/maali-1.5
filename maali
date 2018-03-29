@@ -2229,7 +2229,7 @@ else
   echo "Warning: non-system build detected, overriding MAALI_TOOL_TYPE (currently $MAALI_TOOL_TYPE) and setting to tool type to 'apps'"
   # for user builds we want them to be able to "module use" a single module path
   MAALI_TOOL_TYPE="apps"
-  MAALI_TOOL_MODULE_DIR="$MAALI_MODULE_DIR"
+  MAALI_TOOL_MODULE_DIR="$MAALI_MODULE_DIR/$MAALI_TOOL_TYPE"
 fi
 
 # MAALI_APPS_DIR is where the software is installed, and is based on the tool type
