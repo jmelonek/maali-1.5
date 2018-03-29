@@ -2071,12 +2071,6 @@ echo "The default module path is defined as $MODULEPATH"
 MAALI_BUILD_DIR="$MAALI_ROOT/build"
 MAALI_MODULE_DIR="$MAALI_ROOT/modulefiles"
 MAALI_SRC="$MAALI_ROOT/src"
-echo "  "
-echo "Build dir is $MAALI_BUILD_DIR"
-echo "Module dir is $MAALI_MODULE_DIR"
-echo "Source repo ${MAALI_SRC}"
-echo " "
-echo " "
 
 if [ -z $TMPDIR ]; then
   TMPDIR=/tmp
@@ -2180,16 +2174,19 @@ MAALI_TOOL_NAME_UPPERCASE=$(echo "$MAALI_TOOL_NAME" | tr '[:lower:]' '[:upper:]'
 MAALI_PYTHON_FIRSTLETTER=`echo "$MAALI_TOOL_NAME_ORIG" | cut -b 1`
 
 if [ "$MAALI_CONFIG" != "" ]; then
-  # allow us to override the config
+  # allow us to override the default config
   if [ -f "$HOME/.maali/$MAALI_CONFIG.config" ]; then
      . "$HOME/.maali/$MAALI_CONFIG.config"
 
+     echo "MAALI_ROOT has been reset to ${MAALI_ROOT}"
+     echo " "  
 
      # use the name of our config file to create a different log file
      MAALI_LOG_PREFIX="$MAALI_CONFIG-"
   else
     maali_die "Could not open ${HOME}/.maali/${MAALI_CONFIG}.config!";
   fi
+
 fi
 
 # system builds require MAALI_BUILDER_UID to be defined
@@ -2218,6 +2215,12 @@ if [ "$MAALI_SYSTEM_BUILD" == "YES" ]; then
     fi
   fi
 fi
+echo "  "
+echo "Build dir is $MAALI_BUILD_DIR"
+echo "Module dir is $MAALI_MODULE_DIR"
+echo "Source repo ${MAALI_SRC}"
+echo " "
+echo " "
 
 # need to set MAALI_DEFAULT_CRAY_GCC_PRGENV, MAALI_DEFAULT_CRAY_INTEL_PRGENV and MAALI_DEFAULT_CRAY_CCE_PRGENV
 if [ "$MAALI_DEFAULT_CRAY_PRGENVS" != "" ]; then
