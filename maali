@@ -1671,12 +1671,12 @@ function maali_modify_modulepath {
 	 echo "fi" >> ${HOME}/.profile
      fi
      NEWPATH=""
-     if [ "$MAALI_SYSTEM_BUILD" == "YES" ]; then
+     if [[ "$MAALI_SYSTEM_BUILD" == "YES" ] || [ "$MAALI_WS_BUILD" == "YES" ]]; then
 	 MOD_TOOL_LIST="devel libs apps bio-apps tools" 
 	 for MOD_DIR in ${MOD_TOOL_LIST}; do
              NEWPATH=$NEWPATH:$MAALI_MODULE_DIR/${MOD_DIR}
 	 done
-     else
+     else # user or project builds
 	 MOD_TOOL_LIST="apps"
          NEWPATH=$MAALI_MODULE_DIR/${MOD_TOOL_LIST}
      fi
