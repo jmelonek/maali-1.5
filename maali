@@ -1706,13 +1706,13 @@ function create_gcc_compiler_module {
     fi
     rm tmp
 
-    echo " will install $COMP_NAME ver $COMP_VER"
-    echo " in  $MAALI_MODULE_DIR/devel/${COMP_NAME}"
+    echo " Maali will create $COMP_NAME/$COMP_VER tcl module"
+    echo " in $MAALI_MODULE_DIR/devel/${COMP_NAME}"
 
     maali_makedir "${MAALI_MODULE_DIR}/devel/${COMP_NAME}"
     
     if [ -d "${MAALI_MODULE_DIR}/devel/${COMP_NAME}" ]; then
-      echo "compiler director was created "
+      echo "$COMP_NAME Module directory in devel was created "
     fi
     echo ""
 
@@ -1763,9 +1763,10 @@ function install_default_compiler_modules {
     echo " "
     echo "list of default compilers to install $MAALI_DEFAULT_COMPILERS"    
     echo " "
-#    maali_makedir "$MAALI_MODULE_DIR/devel"
-    echo" call maali_modify_modulepath - from install_default_compiler_modules function"
+    echo " call maali_modify_modulepath - from install_default_compiler_modules function"
+    echo " " 
     maali_modify_modulepath 
+
     for COMP_ID in $MAALI_DEFAULT_COMPILERS; do 
        COMP_NAME=`echo ${COMP_ID} |  cut -d '/' -f 1 `
        IFS=: read -r -d '' -a mpath_list < <(printf '%s:\0' "$MODULEPATH")
@@ -1781,8 +1782,8 @@ function install_default_compiler_modules {
 
 		       maali_makedir "${MAALI_MODULE_DIR}/devel"
 		       create_gcc_compiler_module $COMP_ID	
-		   else
-		       maali_die "compiler module already exists !! maali installation failed install default compiler module"
+		   # else
+		   #   "compiler module already exists !! maali installation failed install default compiler module"
 		   fi
 	       fi
 	   else
