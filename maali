@@ -1857,6 +1857,7 @@ if [[ "${MAALI_TOOL_NAME}" == "maali" ]]; then
        source $MAALI_CONFIG.config
        echo " " 
        make_maali_dot_dir
+       install_default_compiler_modules
        echo " "
 
    elif [[ "${MAALI_CONFIG_BUILD}" == "NO" ]] && [[ "${MAALI_WS_BUILD}" == "YES" ]]; then
