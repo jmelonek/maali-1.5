@@ -237,7 +237,7 @@ function maali_git_download {
   MAALI_GIT_DOWNLOAD_FILESIZE=$(stat -c%s "$MAALI_GIT_DOWNLOAD_FILEPATH")
   if [ $MAALI_GIT_DOWNLOAD_FILESIZE -eq 0 ]; then
     rm -f $MAALI_GIT_DOWNLOAD_FILEPATH
-    maali_die "Can't find config file for $MAALI_TOOL_NAME and could not download from github"
+    maali_die "Can't find cygnet file for $MAALI_TOOL_NAME and could not download from github"
   fi
 
   if [ $DEBUG ]; then
