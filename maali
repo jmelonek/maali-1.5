@@ -48,7 +48,7 @@ elif [ -f "/etc/redhat-release" ]; then
       # We are on a IBM power system
       echo "found the POWER!"
       MAALI_POWER=1
-      MAALI_TOOL_CPU_TARGET="power"
+      MAALI_TOOL_CPU_TARGET="na"
   fi 
 
 else
@@ -58,7 +58,8 @@ fi
 ##############################################################################
 # these are global
 
-MAALI_CYGNET_FILES_URL="https://raw.githubusercontent.com/Pawseyops/maali-cygnet/master"
+#MAALI_CYGNET_FILES_URL="https://raw.githubusercontent.com/Pawseyops/maali-cygnet/master"
+MAALI_CYGNET_FILES_URL="https://raw.githubusercontent.com/chrisbpawsey/maali-cygnet/master"
 
 MAALI_CYGNET_DIR_NAME='cygnet_files'
 MAALI_CYGNET_BUILD_FILE_EXT='cyg'
