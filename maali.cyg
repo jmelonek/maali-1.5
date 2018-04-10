@@ -27,11 +27,13 @@ MAALI_MODULE_SET_PATH=1
 function maali_unpack {
   if [ ! -f "$MAALI_SRC/$MAALI_TOOL_NAME-$MAALI_TOOL_VERSION.tar.gz" ]; then
   # wget --no-check-certificate -O $MAALI_SRC/$MAALI_TOOL_NAME-$MAALI_TOOL_VERSION.tar.gz -q https://github.com/Pawseyops/$MAALI_TOOL_NAME/archive/$MAALI_TOOL_VERSION.tar.gz
-    wget --no-check-certificate -O $MAALI_SRC/$MAALI_TOOL_NAME-$MAALI_TOOL_VERSION.tar.gz -q https://github.com/chrisbpawsey/$MAALI_TOOL_NAME/archive/$MAALI_TOOL_VERSION.tar.gz
+    wget --no-check-certificate -O $MAALI_SRC/$MAALI_TOOL_NAME-$MAALI_TOOL_VERSION.tar.gz -q https://github.com/chrisbpawsey/${MAALI_TOOL_NAME}-1.5/archive/$MAALI_TOOL_VERSION.tar.gz
   fi
 
   cd $MAALI_BUILD_DIR
   maali_run "tar xzf $MAALI_SRC/$MAALI_TOOL_NAME-$MAALI_TOOL_VERSION.tar.gz"
+  #ADDED THIS mv commannd as repo has a bad name maali-1.5 the tarball has maali-1.5-1.5e arggh! 
+  maali_run "mv $MAALI_TOOL_NAME-1.5-$MAALI_TOOL_VERSION  $MAALI_TOOL_NAME-$MAALI_TOOL_VERSION"
 }
 
 ##############################################################################
