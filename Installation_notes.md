@@ -120,3 +120,9 @@ then run ** add_builder ** to create the list of users who can install software
 
 ./add_builder fgump "Forrest Gump" Forrest.Gump@email.com
 ```
+
+### System specific requirement
+If a default meta module is loaded by default such as "use.system" the
+in your system config file set MAALI_REQUIRED_SYSTEM_MODULE="use.system"
+
+

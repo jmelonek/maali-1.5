@@ -48,7 +48,7 @@ elif [ -f "/etc/redhat-release" ]; then
       # We are on a IBM power system
       echo "found the POWER!"
       MAALI_POWER=1
-      MAALI_TOOL_CPU_TARGET="na"
+      MAALI_TOOL_CPU_TARGET="power"
   fi 
 
 else
@@ -2482,20 +2482,22 @@ if [[ $MAALI_CRAY -eq 1 ]] ; then
 fi
 MAALI_TOOL_CPU_TARGET=${MAALI_TOOL_CPU_TARGET:-"$MAALI_DEFAULT_TOOL_CPU_TARGET"}
 
+
 if [[ "$MAALI_TOOL_COMPILERS" == "$MAALI_DEFAULT_SYSTEM_GCC" ]] ; then
-  if [[ "$MAALI_TOOL_CPU_TARGET == "" ]]; then
+   if [[ "$MAALI_TOOL_CPU_TARGET" == "" ]]; then
     MAALI_TOOL_CPU_TARGET="na"
   fi
-elif [[ "$MAALI_TOOL_COMPILERS" == "binary" ]] || [[ $MAALI_PYTHON_TOOL -eq 1 ]] ; then
+ elif [[ "$MAALI_TOOL_COMPILERS" == "binary" ]] || [[ $MAALI_PYTHON_TOOL -eq 1 ]] ; then
   MAALI_TOOL_CPU_TARGET="na"
 fi
 
-#if [[ $MAALI_POWER -eq 1 ]] ; then
+if [[ $MAALI_POWER -eq 1 ]] ; then
 #  MAALI_TOOL_CPU_TARGET="power"
-#fi
+  MAALI_TOOL_CPU_TARGET="na"
+fi
 
 if [ "$MAALI_TOOL_CPU_TARGET" == "" ]; then
-  maali_die "MAALI_TOOL_CPU_TARGET is not set, and this is not a binary, python or system gcc install"
+  maali_die "cpu target is not set, and this is not a binary, python or system gcc install"
 fi
 
 if [ -z $MAALI_TOOL_TYPE ]; then
