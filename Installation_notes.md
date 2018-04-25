@@ -2,15 +2,17 @@
 Maali uses itself to install Maali. 
 
 Some assumptions made with maali one is that you are setting up a hierachral module 
-environment. This requires that you add in some cases set additional environment
-variables the COMPILER and COMPILER_VER are used throughout for defined the install
-path for most applications the major execption is python.
+environment. This requires that additional environment variables for the COMPILER 
+and COMPILER_VER are used throughout modules to define the full installation path for 
+most applications.
 
 for example in the gnu compiler module we define 
 ```
 setenv          COMPILER        gcc
 setenv          COMPILER_VER    4.8.3
 ```
+
+The basic installation procedure:
 
 * `git clone https://github.com/Pawseyops/maali`
 * `cd maali`
@@ -28,41 +30,13 @@ MAALI_DEFAULT_PYTHON='python/2.6.9 python/2.7.10' \
 ./maali -t maali -v 1.0b1
 ```
 
+## MAALI_ROOT 
 
-Some assumptions made with maali one is that you are setting up a hierachral module 
-environment. This requires that you add in some cases set additional environment
-variables the COMPILER and COMPILER_VER are used throughout for defined the install
-path for most applications the major execption is python.
-
-for example in the gnu compiler module we define 
-```
-setenv          COMPILER        gcc
-setenv          COMPILER_VER    4.8.3
-```
-
-## Installing at external sites!
-At the Pawsey Supercomputing Centre we have several system-wide aliases for the different 
-file systems.  This includes the group file system which is intended to be used for 
-long-term storage of executables, input data, important output data, and so on. It allows all 
-members within a project group have read and write access to the /group/[project] directory, 
-so it can be used for sharing files within a project. 
-
-MYGROUP = /group//$PAWSEY_PROJECT/$USER
-
+The _MAALI\_ROOT_ is a key variable that defines the root path used throughout maali.    
 In the maali script the ** DEFAULT ** MAALI_ROOT variable is set to
 MAALI_ROOT="$MYGROUP/software/$MAALI_OS"
 
-So if you wish to use maali for your own project
-in your $HOME/.bashrc export the MYGROUP variable to what matches up to your ** group file** system
-as defined for the Pawsey Supercomputing Centre.
- 
-```
-export MYGROUP=/your_testgroup/[project_name]/$USER
-```
-#NOTE you need make sure that you have chmod and chown the path you have defined for MYGROUP!
-#
-
-
+## How to define the MAALI_ROOT 
 The MAALI_ROOT path variable can be defined in the maali.config file that is downloaded with maali.
 During installation the maali.config file with be copied to $HOME/.maali directory.
 
@@ -87,6 +61,23 @@ for example the defaults paths would be:
 In the application directory (/$MAALI_ROOT/apps) we create the main 
 branches for different compilers 
 
+### Installing at external sites!
+At the Pawsey Supercomputing Centre we have several system-wide variables that are aliases 
+for the different file systems.  This includes the **group** file system which is intended to be used for 
+long-term storage of executables, input data, important output data, and so on. It allows all 
+members within a project group have read and write access to the /group/[project] directory, 
+so it can be used for sharing files within a project. 
+
+MYGROUP = /group/$PAWSEY_PROJECT/$USER
+
+If you are not using the resources at the Pawsey Supercomputing Centre you can 
+in your $HOME/.bashrc export the MYGROUP variable to what matches up to your ** group file** system.
+ 
+```
+export MYGROUP=/your_testgroup/[project_name]/$USER
+```
+*NOTE:* You need make sure that you have correctly set ownership and permission for the path you have defined for MYGROUP!
+You can modified them using _chmod_ and _chown_ accordingly.
 To do a system install of maali you should modify the maali.config file first then 
 you just need to run the following command.  
 
