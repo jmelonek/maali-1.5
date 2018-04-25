@@ -98,12 +98,20 @@ either in your .bashrc file in your $HOME directory.
 Here is an example using the ** DEFAULT ** paths 
 export MODULEPATH=/$MAALI_ROOT/modulefiles/devel:/$MAALI_ROOT/modulefiles/tools:/$MAALI_ROOT/modulefiles/apps:$MODULEPATH
 
-You can then source your ".bashrc" file with the command "source ~/.bashrc"
-Note: The simplest way to pickup changes to your .bashrc file is to logout and
- log back in.
+You can then source your ".bashrc" file with the command 
+```
+source ~/.bashrc"
+```
+or 
+```
+ . ~/.bashrc
+ ```
+ 
+_Note: The simplest way to pickup permanent changes to your .bashrc file is to logout and log back in._
 
 There is a sample gnu compiler module name gnu/4.8.3 in $MAALI_OS/samples 
 directory. 
+
 Check to ensure that the compiler version is correct for your system 
 "gcc -v" will show the gnu version for the default gnu compilers.
 Rename and edit the COMPILER_VER variable as needed.
