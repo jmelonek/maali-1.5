@@ -2496,8 +2496,8 @@ if [[ $MAALI_POWER -eq 1 ]] ; then
   MAALI_TOOL_CPU_TARGET="na"
 fi
 
-if [ "$MAALI_TOOL_CPU_TARGET" == "" ]; then
-  maali_die "cpu target is not set, and this is not a binary, python or system gcc install"
+if [[ "$MAALI_TOOL_CPU_TARGET" == "" ]] ; then
+  maali_die "MAALI_TOOL_CPU_TARGET is not set, and this is not a binary, python or system gcc install"
 fi
 
 if [ -z $MAALI_TOOL_TYPE ]; then
