@@ -81,7 +81,7 @@ You can modified them using _chmod_ and _chown_ accordingly.
 To do a system install of maali you should modify the maali.config file first then 
 you just need to run the following command.  
 
-./maali -t maali -v <version> -c maali -d
+./maali -t maali -v _version_ -c maali -d
 
 You will need to then add the maali modulefiles to your MODULEPATH
 either in your .bashrc file in your $HOME directory.  
