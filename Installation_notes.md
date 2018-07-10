@@ -117,7 +117,7 @@ then run ** add_builder ** to create the list of users who can install software
 
 ```
 
-./add_builder fgump "Forrest Gump" Forrest.Gump@email.com
+./add_builder fgump "Forrest Gump" Forrest.Gump@srimp.com
 ```
 
 ### System specific requirement
