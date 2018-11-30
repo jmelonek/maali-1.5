@@ -52,7 +52,7 @@ elif [ -f "/etc/redhat-release" ]; then
   fi 
 
 elif [ -f "/etc/os-release" ]; then
-  NAME=`grep ID /etc/os-release | cut -d '=' -f 2 | sed -e 's/"//g' `
+  NAME=`grep -w ID /etc/os-release | cut -d '=' -f 2 | sed -e 's/"//g' `
 # the default architecture is x86-64 but test for ppc64le
   if [[ "${NAME}" == "ubuntu" ]]; then
      MAALI_OS_VERSION=`grep VERSION_ID /etc/os-release | cut -d '=' -f 2 | sed -e 's/"//g' `
@@ -68,8 +68,7 @@ elif [ -f "/etc/os-release" ]; then
 else    
   maali_die "Your Operating System is not support by maali, please lodge a ticket at https://github/Pawseyops/maali"
 fi
-
-##############################################################################
+#############################################################################
 # these are global
 
 #MAALI_CYGNET_FILES_URL="https://raw.githubusercontent.com/Pawseyops/maali-cygnet/master"
