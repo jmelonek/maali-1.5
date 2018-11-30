@@ -45,13 +45,29 @@ elif [ -f "/etc/redhat-release" ]; then
 
   MAALI_OS="rhel$MAALI_OS_VERSION"
   if [ `uname -m` == "ppc64le" ]; then
-      # We are on a IBM power system
-      echo "found the POWER!"
+      # We are on an IBM power system
       MAALI_POWER=1
       MAALI_TOOL_CPU_TARGET="power"
+      MAALI_OS="rhel$MAALI_OS_VERSION-$MAALI_TOOL_CPU_TARGET"
   fi 
 
-else
+elif [ -f "/etc/os-release" ];
+  NAME=`grep ID /etc/os-release | cut -d '=' -f 2 | set -e 's/"//g' `
+# the default architecture is x86-64 but test for ppc64le
+  if [[ "${NAME} == "ubuntu" ]]; then
+     MAALI_OS_VERSION=`grep VERSION_ID /etc/os-release | cut -d '=' -f 2 | set -e 's/"//g' `
+     MAALI_OS="ubuntu$MAALI_OS_VERSION"
+     
+     if  [ `uname -m` == "ppc64le" ]; then
+	# We are on an IBM POWER system
+	MAALI_POWER=1
+        MAALI_TOOL_CPU_TARGET="power"
+        MAALI_OS="ubuntu$MAALI_OS_VERSION-$MAALI_TOOL_CPU_TARGET"
+     fi
+  fi
+
+else    
+   
   maali_die "Your Operating System is not support by maali, please lodge a ticket at https://github/Pawseyops/maali"
 fi
 
