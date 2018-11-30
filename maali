@@ -41,6 +41,7 @@ elif [ -f "/etc/centos-release" ]; then
 
   MAALI_OS="centos$MAALI_OS_VERSION"
 elif [ -f "/etc/redhat-release" ]; then
+  MAALI_OS_NAME="rhel"
   MAALI_OS_VERSION=`grep VERSION_ID= /etc/os-release | cut -d '=' -f 2 | sed -e 's/"//g' | cut -d '.' -f 1`
 
   MAALI_OS="rhel$MAALI_OS_VERSION"
@@ -55,6 +56,7 @@ elif [ -f "/etc/os-release" ]; then
   NAME=`grep -w ID /etc/os-release | cut -d '=' -f 2 | sed -e 's/"//g' `
 # the default architecture is x86-64 but test for ppc64le
   if [[ "${NAME}" == "ubuntu" ]]; then
+     MAALI_OS_NAME="ubuntu"
      MAALI_OS_VERSION=`grep VERSION_ID /etc/os-release | cut -d '=' -f 2 | sed -e 's/"//g' `
      MAALI_OS="ubuntu$MAALI_OS_VERSION"
      
@@ -1682,7 +1684,7 @@ function maali_modify_modulepath {
      # environment from batch/interactive jobs.  
      #
     
-     if [[ ${MAALI_OS_VERSION} == "rhel" ]]; then 
+     if [[ ${MAALI_OS_NAME} == "rhel" || ${MAALI_OS_NAME} == "ubuntu" ]]; then 
 	 echo "if [ -f ~/.bashrc ]; then " >> ${HOME}/.profile
 	 echo "  . ~/.bashrc" >> ${HOME}/.profile
 	 echo "fi" >> ${HOME}/.profile
