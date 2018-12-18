@@ -29,3 +29,6 @@ sudo apt -y install libreadline6 libreadline6-dev
 sudo apt -y install libssl-dev
 sudo apt -y install screen
 
+# install dependent packages
+sudo apt -y install libncurses5-dev libbz2-dev liblzma-dev
+ 
