@@ -2487,9 +2487,9 @@ for MAALI_COMPILER in $MAALI_TOOL_COMPILERS; do
 done
 
 #Overwrite MAALI_SUPPORTED_COMPILERS for python
-if [ $MAALI_PYTHON_TOOL ]; then
+if [[ $MAALI_PYTHON_TOOL ]] ; then
   MAALI_SUPPORTED_COMPILERS="python"
-fi # if [ $MAALI_PYTHON_TOOL ]; then
+fi 
 
 if [[ $MAALI_CRAY -eq 1 ]] ; then
   # Support legacy MAALI_TOOL_CRAY_CPU_TARGET
@@ -2506,10 +2506,9 @@ if [[ "$MAALI_TOOL_COMPILERS" == "$MAALI_DEFAULT_SYSTEM_GCC" ]] ; then
   MAALI_TOOL_CPU_TARGET="na"
 fi
 
-if [[ $MAALI_POWER -eq 1 ]] ; then
+#if [[ $MAALI_POWER -eq 1 ]]; then
 #  MAALI_TOOL_CPU_TARGET="power"
-  MAALI_TOOL_CPU_TARGET="na"
-fi
+#fi
 
 if [[ "$MAALI_TOOL_CPU_TARGET" == "" ]] ; then
   maali_die "MAALI_TOOL_CPU_TARGET is not set, and this is not a binary, python or system gcc install"
