@@ -26,7 +26,9 @@ sudo apt-get -y install firefox tcl
 
 # pkgs need to install omnet-5.2.1
 sudo apt-get -y install bison byacc flex
-sudo apt-get -y install qt5-qmake qt5-default
+sudo apt-get -y install qt5-qmake qt5-default qtbase5-dev
+sudo apt-get -y install libxml++2.6-dev openjdk-11-jre 
+sudo apt-get -y install eclipse
 
 
 
