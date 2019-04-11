@@ -28,8 +28,7 @@ sudo apt-get -y install firefox tcl
 sudo apt-get -y install bison byacc flex
 sudo apt-get -y install qt5-qmake qt5-default qtbase5-dev
 sudo apt-get -y install libxml++2.6-dev openjdk-11-jre 
-sudo apt-get -y install eclipse
-
+sudo apt-get -y install libboost-all-dev
 wget http://eclipse.bluemix.net/packages/2019-03/data/eclipse-inst-linux64.tar.gz
 
 
