@@ -2,9 +2,9 @@
 
 # update your current image from the default repo 
 # This is will ensure that the remaining package management installs will work!
-sudo apt-get -y update
+#sudo apt-get -y update
 
-sudo apt-get -y upgrade
+#sudo apt-get -y upgrade
 
 # install to allow x11 fowarding of gui interfaces
 sudo apt-get -y install xauth x11-apps libxt-dev 
@@ -20,14 +20,6 @@ sudo apt-get -y install bc wget make environment-modules libtool
 # install the default gnu compilers
 # to find the the version number "gcc -v"
 sudo apt-get -y install gfortran
-
-# firefox and tcl to install MATLAB
-sudo apt-get -y install firefox 
-
-# pkgs need to install omnet-5.2.1
-sudo apt-get -y install libboost-all-dev
-wget http://eclipse.bluemix.net/packages/2019-03/data/eclipse-inst-linux64.tar.gz
-
 
 if [ ! -d "/nectar" ]; then
   sudo mkdir /nectar 
