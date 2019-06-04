@@ -24,6 +24,8 @@ sudo apt-get -y install gfortran
 # install libncurses-dev to support ccmake
 sudo apt-get -y install libncurses-dev
 
+# install libpython3.6-dev for python module in silo
+sudo apt-get =y install libpython3.6-dev
 
 if [ ! -d "/nectar" ]; then
   sudo mkdir /nectar 
