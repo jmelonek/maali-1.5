@@ -21,6 +21,10 @@ sudo apt-get -y install bc wget make environment-modules libtool
 # to find the the version number "gcc -v"
 sudo apt-get -y install gfortran
 
+# install libncurses-dev to support ccmake
+sudo apt-get -y install libncurses-dev
+
+
 if [ ! -d "/nectar" ]; then
   sudo mkdir /nectar 
   sudo chown -R vagrant /nectar
