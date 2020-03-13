@@ -16,6 +16,8 @@
 # all code is installed using gcc/g++/gfortran version 7.4.0 the default
 # version with ubuntu 18.04 LTS.
 CONFIG_FILE=vagrant
+# install systemgcc
+maali -t system-gcc -v 7.4.0 -c ${CONFIG_FILE}
 # install cmake 3.14.5
 maali -t cmake -v 3.14.5 -c ${CONFIG_FILE}
 # install GNU Scientific Library GSL 2.6
@@ -31,4 +33,10 @@ maali -t fftw-parallel -v 2.1.5 -c ${CONFIG_FILE}
 # install hdf5 1.12.0
 maali -t hdf5 -v 1.6.10 -c ${CONFIG_FILE}
 
+module load gcc gsl fftw-parallel/2.1.5 hdf5/1.6.10
+
 wget https://wwwmpa.mpa-garching.mpg.de/gadget/gadget-2.0.7.tar.gz
+tar -xzf gadget-2.0.7.tar.gz
+cd Gadget-2.0.7/Gadget2
+cp ~/provision/Makefile .
+make
