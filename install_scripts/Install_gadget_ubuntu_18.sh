@@ -13,6 +13,7 @@
 # the url is https://wwwmpa.mpa-garching.mpg.de/gadget/gadget-2.0.7.tar.gz
 
 # once maali is installed
+module load maali
 # all code is installed using gcc/g++/gfortran version 7.4.0 the default
 # version with ubuntu 18.04 LTS.
 CONFIG_FILE=vagrant
@@ -34,6 +35,7 @@ maali -t fftw-parallel -v 2.1.5 -c ${CONFIG_FILE}
 maali -t hdf5 -v 1.6.10 -c ${CONFIG_FILE}
 
 module load gcc gsl fftw-parallel/2.1.5 hdf5/1.6.10
+cd 
 
 wget https://wwwmpa.mpa-garching.mpg.de/gadget/gadget-2.0.7.tar.gz
 tar -xzf gadget-2.0.7.tar.gz
