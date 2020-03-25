@@ -1,16 +1,9 @@
 #!/bin/bash
 #  Author: Chris Bording - HPC Manager @ The University of Western Australia
-#  10 March 2020
+#  25 March 2020
 #
-#  Script to install software necessary to run gadget2
-#  GADGET is a freely available code for cosmological N-body/SPH simulations
-# on massively parallel computers with distributed memory. GADGET uses an
-# explicit communication model that is implemented with the standardized MPI
-# communication interface. The code can be run on essentially all supercomputer
-# systems presently in use, including clusters of workstations or
-# individual PCs.
-
-# the url is https://wwwmpa.mpa-garching.mpg.de/gadget/gadget-2.0.7.tar.gz
+#  Script to install software necessary to run SWarp and SExtractor as part 
+#  of the PHYS3003 class
 
 # once maali is installed
 module load maali
@@ -29,4 +22,6 @@ maali -t fftw -v 3.3.8 -c ${CONFIG_FILE}
 maali -t swarp -v 2.38.0 -c ${CONFIG_FILE}
 # install SExtractor 2.19.5
 maali -t sextractor -v 2.19.5 -c ${CONFIG_FILE}
+
+echo " module load gcc/7.5.0 swarp/2.38.0 sextractor/2.19.5 " >> ~/.bashrc
 
