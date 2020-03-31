@@ -28,7 +28,7 @@ sudo apt-get -y install libncurses-dev
 sudo apt-get -y install libatlas-base-dev
 
 # install libpython3.6-dev for python module in silo
-sudo apt-get -y install libpython3.6-dev
+sudo apt-get -y install libpython3.6-dev zip
 
 if [ ! -d "/nimbus" ]; then
   sudo mkdir /nimbus
