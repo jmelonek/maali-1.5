@@ -38,5 +38,5 @@ module load gcc gsl fftw-parallel/2.1.5 hdf5/1.6.10
 wget https://wwwmpa.mpa-garching.mpg.de/gadget/gadget-2.0.7.tar.gz
 tar -xzf gadget-2.0.7.tar.gz
 cd Gadget-2.0.7/Gadget2
-cp ~/provision/Makefile .
+cp ~/scripts/Makefile .
 make
