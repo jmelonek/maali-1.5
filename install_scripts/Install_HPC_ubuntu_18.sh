@@ -16,7 +16,7 @@ module load maali
 # version with ubuntu 18.04 LTS.
 CONFIG_FILE=vagrant
 # install systemgcc
-maali -t system-gcc -v 7.4.0 {CONFIG_FILE}
+maali -t system-gcc -v 7.5.0 -c ${CONFIG_FILE}
 # install cmake 3.14.5
 maali -t cmake -v 3.14.5 -c ${CONFIG_FILE}
 # install zlib 1.2.11
