@@ -32,6 +32,10 @@ maali -t hdf5 -v 1.12.0 -c ${CONFIG_FILE}
 
 cd
 
+cat >> $HOME/.bashrc <<- EOF
+  module load gcc openmpi
+EOF
+
 #wget https://wwwmpa.mpa-garching.mpg.de/gadget/gadget-2.0.7.tar.gz
 #tar -xzf gadget-2.0.7.tar.gz
 #cd Gadget-2.0.7/Gadget2
