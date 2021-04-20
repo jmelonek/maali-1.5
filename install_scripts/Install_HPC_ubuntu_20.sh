@@ -16,7 +16,11 @@ module load maali
 # version with ubuntu 18.04 LTS.
 CONFIG_FILE=vagrant
 # install systemgcc
+<<<<<<< HEAD
 maali -t system-gcc -v 7.5.0 -c ${CONFIG_FILE}
+=======
+maali -t system-gcc -v 9.3.0 -c ${CONFIG_FILE}
+>>>>>>> 0190148f485910d6618123b99e855d9ef6069ae1
 # install cmake 3.14.5
 maali -t cmake -v 3.14.5 -c ${CONFIG_FILE}
 # install zlib 1.2.11
@@ -24,7 +28,11 @@ maali -t zlib -v 1.2.11 -c ${CONFIG_FILE}
 # install szip 2.1.1
 maali -t szip -v 2.1.1 -c ${CONFIG_FILE}
 # install openmpi 4.0.0
+<<<<<<< HEAD
 maali -t openmpi -v 4.0.0 -c ${CONFIG_FILE}
+=======
+maali -t openmpi -v 4.0.5 -c ${CONFIG_FILE}
+>>>>>>> 0190148f485910d6618123b99e855d9ef6069ae1
 # install fftw 3.3.8
 maali -t fftw-parallel -v 2.1.5 -c ${CONFIG_FILE}
 # install hdf5 1.12.0
