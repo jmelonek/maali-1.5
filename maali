@@ -2031,7 +2031,7 @@ do
              ;;
          w)
              MAALI_ROOT="$HOME/software/$MAALI_OS"
-	     MAALI_WS_BUILD="YES"
+	           MAALI_WS_BUILD="YES"
              ;;
          a)
              MAALI_MAKE_VERSION_DEFAULT=1
@@ -2575,8 +2575,12 @@ if [ "$MAALI_SYSTEM_BUILD" == "YES" ]; then
 
   # this is now based on tool type
   MAALI_TOOL_MODULE_DIR="$MAALI_MODULE_DIR/$MAALI_TOOL_TYPE"
+elif [[ "$MAALI_WS_BUILD" == "YES" ]]; then
+# this is now based on tool type
+MAALI_TOOL_MODULE_DIR="$MAALI_MODULE_DIR/$MAALI_TOOL_TYPE"
 else
-  echo "Warning: non-system build detected, overriding MAALI_TOOL_TYPE (currently $MAALI_TOOL_TYPE) and setting to tool type to 'apps'"
+  echo "Warning: non-system build detected, overriding MAALI_TOOL_TYPE"
+  echo "(currently $MAALI_TOOL_TYPE) and setting to tool type to 'apps'"
   # for user builds we want them to be able to "module use" a single module path
   MAALI_TOOL_TYPE="apps"
   MAALI_TOOL_MODULE_DIR="$MAALI_MODULE_DIR/$MAALI_TOOL_TYPE"
