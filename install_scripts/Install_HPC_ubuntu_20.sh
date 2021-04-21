@@ -29,10 +29,13 @@ maali -t openmpi -v 4.0.5 -c ${CONFIG_FILE}
 maali -t fftw-parallel -v 2.1.5 -c ${CONFIG_FILE}
 # install hdf5 1.12.0
 maali -t hdf5 -v 1.12.0 -c ${CONFIG_FILE}
+# install R 3.6.3
+maali -t R -v 3.6.3 -c ${CONFIG_FILE}
+# install R 4.0.4
 
 cd
 
-cat >> $HOME/.bashrc <<- EOF
+cat >> /home/ubuntu/.bashrc <<- EOF
   module load gcc openmpi
 EOF
 

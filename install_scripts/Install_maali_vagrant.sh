@@ -24,8 +24,11 @@ sudo apt-get -y install gfortran g++
 # install libncurses-dev to support ccmake
 sudo apt-get -y install libncurses-dev
 
-# install libpython3.6-dev for python module in silo
-sudo apt-get -y install libpython3.6-dev
+# install libpython3.8-dev for python module in silo
+sudo apt-get -y install libpython3.8-dev
+
+# install libcurl and libpcre for R
+sudo apt-get -y install libcurl4-gnutls-dev libpcre2-dev
 
 if [ ! -d "/nimbus" ]; then
   sudo mkdir /nimbus
