@@ -12,7 +12,8 @@ sudo apt-get -y install xauth x11-apps libxt-dev
 # install nano xemacs emacs editors
 #sudo apt-get -y install nano xemacs21 xemacs21-bin xemacs21-supportel xemacs21-basesupport-el
 
-sudo apt-get -y install nano emacs emacs-common emacs-goodies-el
+sudo apt-get -y install nano 
+#emacs emacs-common emacs-goodies-el
 
 # install tools that are needed for maali to work
 sudo apt-get -y install bc wget make environment-modules libtool
