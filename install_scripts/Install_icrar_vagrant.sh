@@ -10,7 +10,8 @@ sudo apt-get -y update
 sudo apt-get -y install xauth x11-apps libxt-dev
 
 # install nano xemacs emacs editors
-#sudo apt-get -y install nano xemacs21 xemacs21-bin xemacs21-supportel xemacs21-basesupport-el
+sudo apt-get -y install nano 
+#xemacs21 xemacs21-bin xemacs21-supportel xemacs21-basesupport-el
 
 #sudo apt-get -y install emacs emacs25 emacs25-common emacs-goodies-el
 
@@ -30,7 +31,7 @@ sudo apt-get -y install libatlas-base-dev
 # install libpython3.6-dev for python module in silo
 sudo apt-get -y install libpython3.6-dev zip
 
-if [ ! -d "/nimbus" ]; then
-  sudo mkdir /nimbus
-  sudo chown -R vagrant /nimbus
+if [ ! -d "/icrar" ]; then
+  sudo mkdir /icrar
+  sudo chown -R vagrant /icrar
 fi
