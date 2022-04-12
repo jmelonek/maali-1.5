@@ -11,7 +11,7 @@ module load maali
 # version with ubuntu 20.04 LTS.
 CONFIG_FILE=icrar
 # install systemgcc
-maali -t system-gcc -v 9.3.0 -c ${CONFIG_FILE}
+maali -t system-gcc -v 9.4.0 -c ${CONFIG_FILE}
 # install zlib 1.2.11
 maali -t zlib -v 1.2.11 -c ${CONFIG_FILE}
 # install szip 2.1.1
@@ -26,13 +26,8 @@ maali -t sextractor -v 2.19.5 -c ${CONFIG_FILE}
 # install ds9
 maali -t ds9 -v 8.3 -c ${CONFIG_FILE}
 
-echo " module load gcc/9.3.0 swarp/2.38.0 sextractor/2.19.5 " >> ~/.bashrc
+# install topcat
+maali -t topcat -v full -c ${CONFIG_FILE}
 
-#download and install topcat
-cd /icrar/ubuntu20.04/apps/binary/topcat 
-wget http://www.star.bris.ac.uk/~mbt/topcat/topcat-full.jar
-wget http://www.star.bris.ac.uk/~mbt/topcat/topcat
-
-echo " export PATH=/icrar/ubuntu20.04/apps/binary/topcat/topcat:$PATH "
-mkdir -p /home/vagrant/bin
+echo " module load gcc/9.4.0 swarp/2.41.5 sextractor/2.19.5 topcat/full" >> ~/.bashrc
 
